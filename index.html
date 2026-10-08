@@ -1,14 +1,242 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<title>Näyttötyö Selainohjelmointi</title>
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etusivu | Kotkantie Maalaus &amp; Tapetointi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+<!-- Ylävalikko -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" data-bs-theme="dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-paint-bucket"></i> Kotkantie Maalaus &amp; Tapetointi
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#paaValikko"
+            aria-controls="paaValikko" aria-expanded="false" aria-label="Avaa valikko">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="paaValikko">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Etusivu</a></li>
+        <li class="nav-item"><a class="nav-link" href="palvelut.html">Palvelut</a></li>
+        <li class="nav-item"><a class="nav-link" href="varentestaus.html">Värien testaus</a></li>
+        <li class="nav-item"><a class="nav-link" href="galleria.html">Galleria</a></li>
+        <li class="nav-item"><a class="nav-link" href="yhteystiedot.html">Yhteystiedot</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<script src="js/script.js"></script> 
-    
+<main>
+  <!-- Kuvakelehditys -->
+  <header class="kuva-alku">
+    <div class="container">
+      <h1 class="display-4">Uusi ilme tiloillesi</h1>
+      <p class="lead mt-3">
+        Kotkantie Maalaus &amp; Tapetointi hoitaa kodin, toimiston ja liiketilan
+        uudistuksen ammattitaidolla – värit, tekstit ja aikataulut otteessa.
+      </p>
+      <div class="d-flex gap-3 mt-4 flex-wrap">
+        <a href="palvelut.html" class="btn btn-akcentti btn-lg">Katso palvelut</a>
+        <a href="yhteystiedot.html" class="btn btn-laakeri btn-lg">Ota yhteyttä</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tervehdys -->
+  <section class="osio">
+    <div class="container">
+      <h2 class="osio-otsikko">Tervetuloa meidän luo</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <p>
+            Olemme perustamaisillamme maalaus- ja tapetointialan yritystä, ja
+            haluamme tarjota asiakkaillemme laadukasta, huolellista ja
+            luotettavaa työtä kohtuulliseen hintaan.
+          </p>
+          <p>
+            Teemme töitä kotona, toimistossa ja liikehuoneistossa –
+            pienestä korjausprojektista kokonaisremonttiin. Luvataan tehdä
+            sovittu työ sopimuksen mukaisesti ja ajoissa.
+          </p>
+          <a href="yhteystiedot.html" class="btn btn-akcentti mt-2">
+            <i class="bi bi-telephone me-2"></i>Pyydä ilmainen arvio
+          </a>
+        </div>
+        <div class="col-md-6">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="card kortti-palvelu h-100 text-center p-3">
+                <i class="bi bi-check2-circle kortti-palvelu-kuvake fs-1 text-success"></i>
+                <h5 class="mt-3">Laatu</h5>
+                <p class="text-secondary small">Huolellinen alustatyö ja laadukkaat maalit</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card kortti-palvelu h-100 text-center p-3">
+                <i class="bi bi-calendar-check fs-1 text-primary"></i>
+                <h5 class="mt-3">Aikataulu</h5>
+                <p class="text-secondary small">Alkaamme ja lopetamme sovittuna ajankohtana</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card kortti-palvelu h-100 text-center p-3">
+                <i class="bi bi-shield-check fs-1 text-info"></i>
+                <h5 class="mt-3">Turvallisuus</h5>
+                <p class="text-secondary small">Vakuutettu yritys ja siistit työmaat</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card kortti-palvelu h-100 text-center p-3">
+                <i class="bi bi-cash-stack fs-1 text-warning"></i>
+                <h5 class="mt-3">Hinta</h5>
+                <p class="text-secondary small">Reilu ja läpinäkyvä hintalaskelma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Palvelut lyhyesti -->
+  <section class="osio" style="background-color:#fff;">
+    <div class="container">
+      <h2 class="osio-otsikko">Mitä tehdään</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card kortti-palvelu h-100 text-center p-4">
+            <i class="bi bi-brush kortti-palvelu-kuvake"></i>
+            <h5 class="mt-3">Seinien ja kattojen maalaus</h5>
+            <p class="text-secondary">
+              Sisätilojen perus- ja hienomaalaus: seinät, katot, oveet ja
+              ikkunakehykset.
+            </p>
+            <a href="palvelut.html" class="btn btn-outline-dark btn-sm">Lue lisää</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card kortti-palvelu h-100 text-center p-4">
+            <i class="bi bi-layers kortti-palvelu-kuvake"></i>
+            <h5 class="mt-3">Tapetointi</h5>
+            <p class="text-secondary">
+              Kuvio- ja taidetapetit, vinyyli- ja kangas­tapetit – suoraan ja
+              kuviollisesti, ilman kuplia.
+            </p>
+            <a href="palvelut.html" class="btn btn-outline-dark btn-sm">Lue lisää</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card kortti-palvelu h-100 text-center p-4">
+            <i class="bi bi-palette kortti-palvelu-kuvake"></i>
+            <h5 class="mt-3">Värien testaus</h5>
+            <p class="text-secondary">
+              Epäilevätkö minkä väriset seinät ovat sinun? Kokeile
+              värejä virtuaalisesti kotisohvallasi.
+            </p>
+            <a href="varentestaus.html" class="btn btn-outline-dark btn-sm">Kokeile nyt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallerian esimakua -->
+  <section class="osio">
+    <div class="container">
+      <h2 class="osio-otsikko">Katso, miten osaamme</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card galleria-tuote">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='800'%20height='600'%3E%3Crect%20width='800'%20height='600'%20fill='%238fa8c4'/%3E%3Ctext%20x='400'%20y='310'%20font-family='Arial'%20font-size='28'%20fill='%23ffffff'%20text-anchor='middle'%3ESoivan%20seinamaalaus%3C/text%3E%3C/svg%3E"
+                 alt="Esimakua: soivan seinamaalaus">
+            <div class="kuvaus">
+              <div class="luokka">Maalaustyö</div>
+              <strong>Soivan seinamaalaus</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card galleria-tuote">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='800'%20height='600'%3E%3Crect%20width='800'%20height='600'%20fill='%238ba888'/%3E%3Ctext%20x='400'%20y='310'%20font-family='Arial'%20font-size='28'%20fill='%23ffffff'%20text-anchor='middle'%3EKorridorin%20tapetointi%3C/text%3E%3C/svg%3E"
+                 alt="Esimakua: korridorin tapetointi">
+            <div class="kuvaus">
+              <div class="luokka">Tapetointi</div>
+              <strong>Korridorin tapetointi</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card galleria-tuote">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='800'%20height='600'%3E%3Crect%20width='800'%20height='600'%20fill='%23c98a6b'/%3E%3Ctext%20x='400'%20y='310'%20font-family='Arial'%20font-size='28'%20fill='%23ffffff'%20text-anchor='middle'%3EUlkomaalaus%3C/text%3E%3C/svg%3E"
+                 alt="Esimakua: ulkomaalaus">
+            <div class="kuvaus">
+              <div class="luokka">Ulkomaalaus</div>
+              <strong>Piharakennuksen ulkomaalaus</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="galleria.html" class="btn btn-akcentti">Katso koko galleria</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kutsu toimintaan -->
+  <section class="kutsu-palkki">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <div>
+        <h3 class="mb-1">Tarvitsetko arviota?</h3>
+        <p class="mb-0">Kerro projektit – teemme sinulle ilmain arvonannon.</p>
+      </div>
+      <a href="yhteystiedot.html" class="btn btn-lg">Ota yhteyttä</a>
+    </div>
+  </section>
+</main>
+
+<!-- Alatunniste -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row py-4">
+      <div class="col-md-4 mb-3">
+        <div class="brand h5"><i class="bi bi-paint-bucket"></i> Kotkantie Maalaus &amp; Tapetointi</div>
+        <p class="small">
+          Uusi ilme tiloillesi – maalaustyöt ja tapetointi ammattitaidolla.
+        </p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="h6">Sivut</div>
+        <ul class="list-unstyled small">
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="palvelut.html">Palvelut</a></li>
+          <li><a href="varentestaus.html">Värien testaus</a></li>
+          <li><a href="galleria.html">Galleria</a></li>
+          <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="h6">Yhteys</div>
+        <ul class="list-unstyled small">
+          <li><i class="bi bi-geo-alt me-2"></i>Kotkantie 12 B 14, 14400 Vantaa</li>
+          <li><i class="bi bi-telephone me-2"></i>040 123 4567</li>
+          <li><i class="bi bi-envelope me-2"></i>info@kotkantie-maalaukset.fi</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-alaosa text-center py-3">
+      <span id="vuosi"></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

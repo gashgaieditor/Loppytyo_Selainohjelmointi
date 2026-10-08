@@ -1,0 +1,427 @@
+/* ============================================================
+   Kotkantie Maalaus & Tapetointi
+   Omadat tyylit Bootstrap 5:n päälle.
+   Brändivärit on kerätty muuttujiin – vaihda ne helposti täällä.
+   ============================================================ */
+
+:root {
+  /* Brändivärit (väliaikaiset – vaihdetaan asiakkaan värien tultua) */
+  --vp-tumma: #1f3a4d;        /* syvä merensininen */
+  --vp-akcentti: #e8a13c;     /* lämpin oranssi */
+  --vp-vaalea: #f4f1ec;       /* kermanvalkoinen */
+  --vp-teksti: #2b2b2b;
+  --vp-harmaa: #6c757d;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--vp-teksti);
+  background-color: var(--vp-vaalea);
+}
+
+/* ---------- Ylävalikko ---------- */
+.navbar {
+  background-color: var(--vp-tumma) !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand .bi {
+  color: var(--vp-akcentti);
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar .nav-link.active {
+  color: var(--vp-akcentti) !important;
+}
+
+/* ---------- Kuvakelehditys (hero) ---------- */
+.kuva-alku {
+  background: linear-gradient(135deg, var(--vp-tumma) 0%, #2d5470 100%);
+  color: #fff;
+  padding: 6rem 0 5rem;
+}
+
+.kuva-alku h1 {
+  font-weight: 700;
+}
+
+.kuva-alku .lead {
+  max-width: 640px;
+}
+
+.btn-akcentti {
+  background-color: var(--vp-akcentti);
+  border-color: var(--vp-akcentti);
+  color: #1f2430;
+  font-weight: 600;
+}
+
+.btn-akcentti:hover {
+  background-color: #d18c29;
+  border-color: #d18c29;
+  color: #fff;
+}
+
+.btn-laakeri {
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-laakeri:hover {
+  background-color: #fff;
+  color: var(--vp-tumma);
+}
+
+/* ---------- Yleiset osiot ---------- */
+.osio {
+  padding: 4rem 0;
+}
+
+.osio-otsikko {
+  font-weight: 700;
+  color: var(--vp-tumma);
+  margin-bottom: 2rem;
+}
+
+.osio-otsikko::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 0.5rem;
+  background-color: var(--vp-akcentti);
+  border-radius: 2px;
+}
+
+/* Sivun otsikkopalkki pienemmille sivuille */
+.sivun-otsikko {
+  background-color: var(--vp-tumma);
+  color: #fff;
+  padding: 3rem 0;
+}
+
+/* ---------- Kortit ---------- */
+.kortti-palvelu {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kortti-palvelu:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.kortti-palvelu .kuvake {
+  font-size: 2.5rem;
+  color: var(--vp-akcentti);
+}
+
+/* ---------- Värien testaus: huone ---------- */
+.huone {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  /* Maalattavat värit asetetaan JS:llä näihin muuttujiin */
+  --seinavari: #f2f0ea;
+  --jalkalistavari: #ffffff;
+}
+
+.seina {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 22%;
+  background-color: var(--seinavari);
+  transition: background-color 0.35s ease;
+}
+
+.lattia {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 22%;
+  background: repeating-linear-gradient(
+    90deg,
+    #c9a26f 0 70px,
+    #bd9460 70px 140px
+  );
+  box-shadow: inset 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.jalkalista {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22%;
+  height: 4.5%;
+  background-color: var(--jalkalistavari);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  transition: background-color 0.35s ease;
+}
+
+.ovi {
+  position: absolute;
+  bottom: 22%;
+  left: 10%;
+  width: 15%;
+  height: 48%;
+  background-color: #fbfaf7;
+  border: 5px solid #d9d2c6;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.ovi::after {
+  content: "";
+  position: absolute;
+  right: 12%;
+  top: 52%;
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  background-color: #b9924f;
+}
+
+.ikkuna {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  width: 28%;
+  height: 36%;
+  background: linear-gradient(180deg, #cfe7f5 0%, #e8f4fb 100%);
+  border: 7px solid #ffffff;
+  box-shadow: 0 0 0 2px #d9d2c6, 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.ikkuna::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  background-color: #ffffff;
+}
+
+.ikkuna::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  margin-top: -2px;
+  background-color: #ffffff;
+}
+
+.sofa {
+  position: absolute;
+  bottom: 22%;
+  left: 38%;
+  width: 30%;
+  height: 17%;
+  background-color: #7c8a94;
+  border-radius: 12px 12px 0 0;
+}
+
+.sofa::before {
+  content: "";
+  position: absolute;
+  left: -6%;
+  bottom: 0;
+  width: 14%;
+  height: 100%;
+  background-color: #6d7a84;
+  border-radius: 12px 0 0 0;
+}
+
+.sofa::after {
+  content: "";
+  position: absolute;
+  right: -6%;
+  bottom: 0;
+  width: 14%;
+  height: 100%;
+  background-color: #6d7a84;
+  border-radius: 0 12px 0 0;
+}
+
+/* ---------- Värien testaus: navetat ---------- */
+.navetarivit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.navetta {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.navetta:hover {
+  transform: scale(1.1);
+}
+
+.navetta.aktiivinen {
+  border-color: var(--vp-tumma);
+  transform: scale(1.12);
+  box-shadow: 0 0 0 3px var(--vp-akcentti);
+}
+
+.navetta-oma {
+  position: relative;
+  overflow: hidden;
+  background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+  border: 3px dashed rgba(0, 0, 0, 0.35);
+}
+
+.navetta-oma input[type="color"] {
+  position: absolute;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  cursor: pointer;
+  opacity: 0;
+}
+
+.vari-otanto {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  vertical-align: -0.2rem;
+  margin-right: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Galleria ---------- */
+.galleria-tuote {
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.galleria-tuote:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.galleria-tuote img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.galleria-tuote .kuvaus {
+  padding: 0.75rem 1rem;
+}
+
+.galleria-tuote .luokka {
+  font-size: 0.8rem;
+  color: var(--vp-harmaa);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- Yhteystiedot ---------- */
+.yhteystieto-kohteet .bi {
+  font-size: 1.4rem;
+  color: var(--vp-akcentti);
+  width: 2rem;
+  text-align: center;
+}
+
+.kartta-upotus {
+  height: 260px;
+  border-radius: 0.75rem;
+  background-color: #dfe6ea;
+  border: 2px dashed #aab7c0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--vp-harmaa);
+}
+
+.kartta-upotus .bi {
+  font-size: 2.5rem;
+}
+
+/* ---------- Kutsu-toimintaan -palkki ---------- */
+.kutsu-palkki {
+  background-color: var(--vp-tumma);
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.kutsu-palkki .btn {
+  background-color: var(--vp-akcentti);
+  border-color: var(--vp-akcentti);
+  color: #1f2430;
+  font-weight: 600;
+}
+
+.kutsu-palkki .btn:hover {
+  background-color: #d18c29;
+  color: #fff;
+}
+
+/* ---------- Alatunniste ---------- */
+.site-footer {
+  background-color: #16283a;
+  color: #cfd8e0;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: #cfd8e0;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--vp-akcentti);
+}
+
+.site-footer .brand .bi {
+  color: var(--vp-akcentti);
+}
+
+.footer-alaosa {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
