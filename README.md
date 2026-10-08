@@ -1,2 +1,2 @@
-# N-ytt-ty-Selainohjelmointi
+# Lopputyö-Selainohjelmointi
 Näyttötyö Selainohjelmointi | Kotkantien maalaus- ja tapetointi
