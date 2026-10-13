@@ -283,6 +283,12 @@ $(function () {
   rakennaNapit('#jalkalistanavetta-ala', jalkalistaVarit, '--jalkalista', '#jalkalista-otanto', 0);
 
   $('<style>' +
+    '#huone{height:auto !important;min-height:0 !important;aspect-ratio:auto !important;' +
+    'padding:0 !important;overflow:hidden;line-height:0}' +
+    '#huone [style*="var(--seina)"],#huone [style*="var(--jalkalista)"]{transition:fill .45s ease}' +
+    '.vari-otanto{transition:background .45s ease}' +
+    '@media (prefers-reduced-motion:reduce){#huone [style*="var(--seina)"],' +
+    '#huone [style*="var(--jalkalista)"],.vari-otanto{transition:none}}' +
     '.vari-nappi.valittu{outline:3px solid #0d6efd;outline-offset:2px}' +
     '.vari-otanto{display:inline-block;width:18px;height:18px;border-radius:4px;' +
     'border:1px solid #999;vertical-align:middle}' +
