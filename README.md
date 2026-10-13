@@ -4,6 +4,8 @@ Loppytyö **Selainohjelmointi**-kurssille: yrityksen esittelysivusto kuvitteelli
 
 🔗 **Demo:** [tulossa linkki sivulle tähän]
 
+Etusivun esikatselu
+
 ![Etusivun esikatselu](kuvat/etusivu.png)
 
 ## Projektin kuvaus
