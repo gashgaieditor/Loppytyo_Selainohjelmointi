@@ -1,8 +1,18 @@
 /* ============================================================
    Kotkantie Maalaus & Tapetointi
-   Omadat tyylit Bootstrap 5:n päälle.
+   Omat tyylit Bootstrap 5:n päälle.
    Brändivärit on kerätty muuttujiin – vaihda ne helposti täällä.
+
+   Graafinen ohjeistus:
+   - Otsikko 1: 20-24 px (käytössä 24 px)
+   - Otsikko 2 ja muut otsikot: 14-16 px (käytössä 16 px)
+   - Tekstit: 12 px
+   - Fontti: Roboto
    ============================================================ */
+
+/* HUOM: @import-säännön pitää olla tiedoston alussa ennen muita sääntöjä.
+   Tämän tiedoston pitää latautua Bootstrapin JÄLKEEN, jotta ylikirjoitukset toimivat. */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 :root {
   /* Brändivärit (väliaikaiset – vaihdetaan asiakkaan värien tultua) */
@@ -11,12 +21,56 @@
   --vp-vaalea: #f4f1ec;       /* kermanvalkoinen */
   --vp-teksti: #2b2b2b;
   --vp-harmaa: #6c757d;
+
+  /* Typografia (graafisen ohjeistuksen mukaan) */
+  --fontti-perus: "Roboto", sans-serif;
+  --koko-h1: 24px;            /* sallittu 20-24 px */
+  --koko-otsikko: 16px;       /* sallittu 14-16 px */
+  --koko-teksti: 12px;
+
+  /* Bootstrapin omat muuttujat ohjeiden mukaisiksi */
+  --bs-body-font-family: var(--fontti-perus);
+  --bs-body-font-size: var(--koko-teksti);
 }
 
+/* ---------- Typografia ---------- */
 body {
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: var(--fontti-perus);
+  font-size: var(--koko-teksti);
   color: var(--vp-teksti);
   background-color: var(--vp-vaalea);
+}
+
+h1, .h1,
+.display-1, .display-2, .display-3,
+.display-4, .display-5, .display-6 {
+  font-size: var(--koko-h1);
+}
+
+h2, h3, h4, h5, h6,
+.h2, .h3, .h4, .h5, .h6 {
+  font-size: var(--koko-otsikko);
+}
+
+/* Bootstrapin tekstiluokat ja komponentit 12 px:ään */
+p, li, td, th, label, small, .small,
+.lead,
+.card-text,
+.nav-link,
+.dropdown-item,
+.btn,
+.form-control,
+.form-select,
+.form-label,
+.form-text,
+.badge,
+.breadcrumb {
+  font-size: var(--koko-teksti);
+}
+
+/* Logo/brändi on otsikkotason elementti */
+.navbar-brand {
+  font-size: var(--koko-otsikko);
 }
 
 /* ---------- Ylävalikko ---------- */
@@ -55,6 +109,7 @@ body {
 
 .kuva-alku .lead {
   max-width: 640px;
+  font-size: var(--koko-teksti);
 }
 
 .btn-akcentti {
@@ -122,6 +177,7 @@ body {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Kuvakkeet eivät ole tekstiä, joten niiden koko saa poiketa */
 .kortti-palvelu .kuvake {
   font-size: 2.5rem;
   color: var(--vp-akcentti);
@@ -342,13 +398,14 @@ body {
 }
 
 .galleria-tuote .luokka {
-  font-size: 0.8rem;
+  font-size: var(--koko-teksti);
   color: var(--vp-harmaa);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 /* ---------- Yhteystiedot ---------- */
+/* Kuvakkeet eivät ole tekstiä, joten niiden koko saa poiketa */
 .yhteystieto-kohteet .bi {
   font-size: 1.4rem;
   color: var(--vp-akcentti);
@@ -413,7 +470,7 @@ body {
 
 .footer-alaosa {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.85rem;
+  font-size: var(--koko-teksti);
 }
 
 body {
