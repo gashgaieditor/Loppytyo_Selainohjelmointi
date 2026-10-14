@@ -8,14 +8,18 @@ $(function () {
   $("#vuosi").text("© " + vuosi + " Kotkantie Maalaus & Tapetointi. Kaikki oikeudet pidätetään.");
 
   // ---------- Yhteystietolomake: asiakkaanpuoleinen validointi ----------
-  var $muoto = $("#yhteystietolomake");
+  var $lomake = $("#yhteystietolomake");
 
-  $muoto.on("submit", function (tapaukset) {
-    tapaukset.preventDefault();
+  var SAHKOPOSTI_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var PUHELIN_RE = /^(\+358|0)\d{2,9}$/;
+
+  $lomake.on("submit", function (e) {
+    e.preventDefault();
 
     var nimi = $.trim($("#nimi").val());
     var sahkoposti = $.trim($("#sahkoposti").val());
-    var puhelin = $.trim($("#puhelin").val());
+    // Poistetaan välilyönnit ja viivat, jotta "040 123 4567" hyväksytään
+    var puhelin = $.trim($("#puhelin").val()).replace(/[\s-]/g, "");
     var viesti = $.trim($("#viesti").val());
 
     var ok = true;
@@ -28,26 +32,25 @@ $(function () {
       merkitseKelvollinen("#nimi");
     }
 
-    // Sähköposti: yksinkertainen tarkistus
-    var postiyhteys = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    if (!postiyhteys.test(sahkoposti)) {
+    // Sähköposti
+    if (!SAHKOPOSTI_RE.test(sahkoposti)) {
       merkitseVirheellinen("#sahkoposti", "Kirjoita kelvollinen sähköpostiosoite.");
       ok = false;
     } else {
       merkitseKelvollinen("#sahkoposti");
     }
 
-    // Puhelin: valinnainen, mutta jos täytetty, tarkista muoto (0x... tai +...)
+    // Puhelin: valinnainen, mutta jos täytetty, tarkista muoto
     if (puhelin !== "") {
-      var puhelimiyhteys = /^(\+358|0)\d{2,9}$/;
-      if (!puhelimiyhteys.test(puhelin)) {
+      if (!PUHELIN_RE.test(puhelin)) {
         merkitseVirheellinen("#puhelin", "Tarkista puhelinnumero (esim. 040 123 4567).");
         ok = false;
       } else {
         merkitseKelvollinen("#puhelin");
       }
     } else {
-      merkitseKelvollinen("#puhelin");
+      // Tyhjä valinnainen kenttä ei saa näkyä vihreänä
+      $("#puhelin").removeClass("is-invalid is-valid");
     }
 
     // Viesti: vähintään 10 merkkiä
@@ -59,20 +62,18 @@ $(function () {
     }
 
     if (!ok) {
-      $muoto.find(".was-validated .is-invalid, .is-invalid")
-        .first()
-        .trigger("focus");
+      $lomake.find(".is-invalid").first().trigger("focus");
       return;
     }
 
     // Validointi onnistui – ei palvelinta, joten näytetään vain vahvistus
-    $muoto.hide();
+    $lomake.hide();
     $("#lomake-vahvistus").removeClass("d-none");
-    $("#lomake-vahvistus").alert("toggle");
   });
 
   function merkitseVirheellinen(selektori, viesti) {
     $(selektori)
+      .removeClass("is-valid")
       .addClass("is-invalid")
       .siblings(".invalid-feedback")
       .first()
@@ -86,21 +87,24 @@ $(function () {
   }
 
   // Poista validointimerkinnät, kun käyttäjä alkaa kirjoittaa uudestaan
-  $muoto.find("input, textarea").on("input", function () {
-    $(this).removeClass("is-invalid");
+  $lomake.find("input, textarea").on("input", function () {
+    $(this).removeClass("is-invalid is-valid");
   });
 
   // ---------- Pienet parantelut ----------
 
-  // Sileä vieritys ankuroitaviin linkeihin
-  $('a[href*="#"]').on("click", function (tapaukset) {
-    var kohde = $(this).attr("href");
-    if (kohde.length > 1 && $(kohde).length) {
-      tapaukset.preventDefault();
-      $("html, body").animate(
-        { scrollTop: $(kohde).offset().top - 80 },
-        400
-      );
+  // Sileä vieritys saman sivun ankkurilinkkeihin
+  $('a[href*="#"]').on("click", function (e) {
+    // Vain saman sivun ankkurit (ei esim. index.html#osio toiselta sivulta)
+    if (this.pathname !== window.location.pathname || this.hostname !== window.location.hostname) {
+      return;
+    }
+    if (this.hash.length < 2) { return; }
+
+    var kohde = document.getElementById(this.hash.slice(1));
+    if (kohde) {
+      e.preventDefault();
+      $("html, body").animate({ scrollTop: $(kohde).offset().top - 80 }, 400);
     }
   });
 });

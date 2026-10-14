@@ -1,6 +1,7 @@
 /* Värien testaus: realistisempi huonemalli (SVG) + värinapit
    Vaatii: jQuery sekä HTML:ssä #huone, #seinanavetta-ala, #jalkalistanavetta-ala,
-   #seina-otanto, #jalkalista-otanto (+ niiden vieressä .otanto-teksti) */
+   #seina-otanto, #jalkalista-otanto (+ niiden vieressä .otanto-teksti)
+   HUOM. Tähän javascript koodiin on käytetty tekoälyn apua */
 
 $(function () {
   var seinaVarit = [
