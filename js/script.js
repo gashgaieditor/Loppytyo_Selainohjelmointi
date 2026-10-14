@@ -52,7 +52,7 @@ $(function () {
 
     // Viesti: vähintään 10 merkkiä
     if (viesti.length < 10) {
-      merkitseVirheellinen("#viesti", "Kerro vähintään 10 merkillä, mistä on kyse.");
+      merkitseVirheellinen("#viesti", "Kuvaile työtäsi tai projektiasi vähintään 10 merkillä.");
       ok = false;
     } else {
       merkitseKelvollinen("#viesti");
