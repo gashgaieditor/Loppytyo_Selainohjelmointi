@@ -24,9 +24,9 @@
 
   /* Typografia (graafisen ohjeistuksen mukaan) */
   --fontti-perus: "Roboto", sans-serif;
-  --koko-h1: 24px;            /* sallittu 20-24 px */
-  --koko-otsikko: 16px;       /* sallittu 14-16 px */
-  --koko-teksti: 12px;
+  --koko-h1: 32px;            /* sallittu 20-24 px */
+  --koko-otsikko: 21px;       /* sallittu 14-16 px */
+  --koko-teksti: 16px;
 
   /* Bootstrapin omat muuttujat ohjeiden mukaisiksi */
   --bs-body-font-family: var(--fontti-perus);
