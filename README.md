@@ -36,10 +36,11 @@ Nayttotyo-selainohjelmointi/
 ├── kuvat/
 ├── galleria.html
 ├── index.html
+├── license.txt
 ├── palvelut.html
+├── README.md
 ├── varientestaus.html
-├── yhteystiedot.html
-└── README.md
+└── yhteystiedot.html
 ```
 
 ## Mitä opin
