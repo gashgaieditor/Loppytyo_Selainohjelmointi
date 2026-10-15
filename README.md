@@ -4,9 +4,11 @@ Loppytyö **Selainohjelmointi**-kurssille: yrityksen esittelysivusto kuvitteelli
 
 🔗 **Demo:** https://gashgaieditor.github.io/Loppytyo_Selainohjelmointi/
 
-Etusivun esikatselu
+## Kokeile sivustoa
 
-![Etusivun esikatselu](kuvat/etusivu.png)
+Sivusto toimii suoraan selaimessa, eikä sen käyttöön tarvita asennusta:
+
+👉 **[Avaa demo](https://gashgaieditor.github.io/Loppytyo_Selainohjelmointi/)**
 
 ## Projektin kuvaus
 
@@ -41,17 +43,12 @@ Nayttotyo-selainohjelmointi/
 └── README.md
 ```
 
+## Mitä opin
 
-## Käyttöönotto
-
-1. Kloonaa repositorio:
-```bash
-   git clone https://github.com/[käyttäjänimi]/Lopputyo-Selainohjelmointi.git
-```
-2. Avaa kansio ja avaa `index.html` selaimessa.
-
-Erillistä asennusta ei tarvita.
+- Monisivuisen sivuston rakentaminen HTML:llä ja CSS:llä
+- Käyttöliittymän interaktiivisuus JavaScriptillä
+- Sivuston julkaisu GitHub Pagesissa
 
 ## Tekijä
 
-Elmo Rinne – OSAO 2026
+Elmo Rinne – OSAO Selainohjelmointi, lopputyö (2026)
