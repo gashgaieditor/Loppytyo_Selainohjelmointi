@@ -1,7 +1,7 @@
 /* ============================================================
    Kotkantie Maalaus & Tapetointi
    Omat tyylit Bootstrap 5:n päälle.
-   Brändivärit on kerätty muuttujiin – vaihda ne helposti täällä.
+   Brändivärit on kerätty muuttujiin
 
    Graafinen ohjeistus:
    - Otsikko 1: 20-24 px (käytössä 24 px)
@@ -10,8 +10,6 @@
    - Fontti: Roboto
    ============================================================ */
 
-/* HUOM: @import-säännön pitää olla tiedoston alussa ennen muita sääntöjä.
-   Tämän tiedoston pitää latautua Bootstrapin JÄLKEEN, jotta ylikirjoitukset toimivat. */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 :root {
