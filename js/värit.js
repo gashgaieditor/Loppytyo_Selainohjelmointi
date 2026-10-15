@@ -1,6 +1,6 @@
 /* Värien testaus: realistisempi huonemalli (SVG) + värinapit
-   Vaatii: jQuery sekä HTML:ssä #huone, #seinanavetta-ala, #jalkalistanavetta-ala,
-   #seina-otanto, #jalkalista-otanto (+ niiden vieressä .otanto-teksti)
+   Vaatii: jQuery sekä HTML:ssä #huone, #seinän_nappialue, #Jalkalistan_nappialue,
+   #seina-valittu, #jalkalista-valittu (+ niiden vieressä .valittu-teksti)
    HUOM. Tähän javascript koodiin on käytetty tekoälyn apua */
 
 $(function () {
@@ -255,14 +255,14 @@ $(function () {
   $huone.empty().html(svg);
 
   /* Värinapit */
-  function rakennaNapit(kohde, varit, muuttuja, otantoId, oletus) {
+  function rakennaNapit(kohde, varit, muuttuja, valittuId, oletus) {
     var $ala = $(kohde).empty();
-    var $otanto = $(otantoId);
+    var $valittu = $(valittuId);
 
     function valitse(v, $nappi) {
       $huone[0].style.setProperty(muuttuja, v.hex);
-      $otanto.css('background', v.hex);
-      $otanto.siblings('.otanto-teksti').text(' ' + v.nimi);
+      $valittu.css('background', v.hex);
+      $valittu.siblings('.valittu-teksti').text(' ' + v.nimi);
       $ala.find('button').removeClass('valittu').attr('aria-pressed', 'false');
       $nappi.addClass('valittu').attr('aria-pressed', 'true');
     }
@@ -280,18 +280,18 @@ $(function () {
     });
   }
 
-  rakennaNapit('#seinanavetta-ala', seinaVarit, '--seina', '#seina-otanto', 0);
-  rakennaNapit('#jalkalistanavetta-ala', jalkalistaVarit, '--jalkalista', '#jalkalista-otanto', 0);
+  rakennaNapit('#seinän_nappialue', seinaVarit, '--seina', '#seina-valittu', 0);
+  rakennaNapit('#Jalkalistan_nappialue', jalkalistaVarit, '--jalkalista', '#jalkalista-valittu', 0);
 
   $('<style>' +
     '#huone{height:auto !important;min-height:0 !important;aspect-ratio:auto !important;' +
     'padding:0 !important;overflow:hidden;line-height:0}' +
     '#huone [style*="var(--seina)"],#huone [style*="var(--jalkalista)"]{transition:fill .45s ease}' +
-    '.vari-otanto{transition:background .45s ease}' +
+    '.vari-valittu{transition:background .45s ease}' +
     '@media (prefers-reduced-motion:reduce){#huone [style*="var(--seina)"],' +
-    '#huone [style*="var(--jalkalista)"],.vari-otanto{transition:none}}' +
+    '#huone [style*="var(--jalkalista)"],.vari-valittu{transition:none}}' +
     '.vari-nappi.valittu{outline:3px solid #0d6efd;outline-offset:2px}' +
-    '.vari-otanto{display:inline-block;width:18px;height:18px;border-radius:4px;' +
+    '.vari-valittu{display:inline-block;width:18px;height:18px;border-radius:4px;' +
     'border:1px solid #999;vertical-align:middle}' +
   '</style>').appendTo('head');
 });
