@@ -2,7 +2,6 @@
 
 Loppytyö **Selainohjelmointi**-kurssille: yrityksen esittelysivusto kuvitteelliselle maalaus- ja tapetointiyritykselle.
 
-🔗 **Demo:** https://gashgaieditor.github.io/Loppytyo_Selainohjelmointi/
 
 ## Kokeile sivustoa
 
