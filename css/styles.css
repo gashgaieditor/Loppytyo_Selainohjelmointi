@@ -3,10 +3,16 @@
    Omat tyylit Bootstrap 5:n päälle.
    Brändivärit on kerätty muuttujiin
 
-   Graafinen ohjeistus:
-   - Otsikko 1: 20-24 px (käytössä 24 px)
-   - Otsikko 2 ja muut otsikot: 14-16 px (käytössä 16 px)
+   Graafinen ohjeistus (suositus):
+   - Otsikko 1: 20-24 px
+   - Otsikko 2 ja muut otsikot: 14-16 px
    - Tekstit: 12 px
+   - Fontti: Roboto
+
+   Sivustolla käytössä olevat koot (poikkeavat ohjeistuksesta):
+   - Otsikko 1: 32 px
+   - Otsikko 2 ja muut otsikot: 21 px
+   - Tekstit: 16 px
    - Fontti: Roboto
    ============================================================ */
 
@@ -20,13 +26,13 @@
   --vp-teksti: #2b2b2b;
   --vp-harmaa: #6c757d;
 
-  /* Typografia (graafisen ohjeistuksen mukaan) */
+  /* Typografia (käytössä olevat koot, ks. ohjeistus ylhäällä) */
   --fontti-perus: "Roboto", sans-serif;
-  --koko-h1: 32px;            /* sallittu 20-24 px */
-  --koko-otsikko: 21px;       /* sallittu 14-16 px */
-  --koko-teksti: 16px;
+  --koko-h1: 32px;            /* ohjeistus: 20-24 px */
+  --koko-otsikko: 21px;       /* ohjeistus: 14-16 px */
+  --koko-teksti: 16px;        /* ohjeistus: 12 px */
 
-  /* Bootstrapin omat muuttujat ohjeiden mukaisiksi */
+  /* Bootstrapin omat muuttujat samoiksi kuin omat muuttujat */
   --bs-body-font-family: var(--fontti-perus);
   --bs-body-font-size: var(--koko-teksti);
 }
@@ -50,7 +56,7 @@ h2, h3, h4, h5, h6,
   font-size: var(--koko-otsikko);
 }
 
-/* Bootstrapin tekstiluokat ja komponentit 12 px:ään */
+/* Bootstrapin tekstiluokat ja komponentit tekstikokoon (16 px) */
 p, li, td, th, label, small, .small,
 .lead,
 .card-text,
@@ -369,6 +375,24 @@ p, li, td, th, label, small, .small,
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+#seinän_nappialue, #Jalkalistan_nappialue {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vari-nappi:focus,
+.vari-nappi:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.vari-nappi.valittu,
+.vari-nappi.valittu:focus {
+  outline: 3px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+.vari-valittu { margin-right: 6px; }
 /* ---------- Galleria ---------- */
 .galleria-tuote {
   border: none;

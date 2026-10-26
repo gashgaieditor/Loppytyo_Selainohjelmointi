@@ -4,6 +4,26 @@
    HUOM. Tähän javascript koodiin on käytetty tekoälyn apua */
 
 $(function () {
+  /* Kuvan värit: käytössä sekä seinissä että jalkalistoissa */
+  var lisaVarit = [
+    { nimi: 'Fiesta',          hex: '#DD4132' },
+    { nimi: 'Jester Red',      hex: '#9E1030' },
+    { nimi: 'Turmeric',        hex: '#FE840E' },
+    { nimi: 'Living Coral',    hex: '#FF6F61' },
+    { nimi: 'Pink Peacock',    hex: '#C62168' },
+    { nimi: 'Pepper Stem',     hex: '#8D9440' },
+    { nimi: 'Aspen Gold',      hex: '#FFD662' },
+    { nimi: 'Princess Blue',   hex: '#00539C' },
+    { nimi: 'Toffee',          hex: '#755139' },
+    { nimi: 'Mango Mojito',    hex: '#D69C2F' },
+    { nimi: 'Terrarium Moss',  hex: '#616247' },
+    { nimi: 'Sweet Lilac',     hex: '#E8B5CE' },
+    { nimi: 'Soybean',         hex: '#D2C29D' },
+    { nimi: 'Eclipse',         hex: '#343148' },
+    { nimi: 'Sweet Corn',      hex: '#F0EAD6' },
+    { nimi: 'Brown Granite',   hex: '#615550' }
+  ];
+
   var seinaVarit = [
     { nimi: 'Luonnonvalkoinen', hex: '#F3EFE6' },
     { nimi: 'Lämmin harmaa',    hex: '#CFCAC2' },
@@ -15,7 +35,7 @@ $(function () {
     { nimi: 'Persikka',         hex: '#EBC3A8' },
     { nimi: 'Terrakotta',       hex: '#C47A5A' },
     { nimi: 'Syvä petrooli',    hex: '#2F5D62' }
-  ];
+  ].concat(lisaVarit);
 
   var jalkalistaVarit = [
     { nimi: 'Valkoinen',        hex: '#FFFFFF' },
@@ -24,7 +44,7 @@ $(function () {
     { nimi: 'Grafiitti',        hex: '#4A4D52' },
     { nimi: 'Tammi',            hex: '#A97C50' },
     { nimi: 'Musta',            hex: '#1E1E1E' }
-  ];
+  ].concat(lisaVarit);
 
   var $huone = $('#huone');
 
@@ -262,7 +282,7 @@ $(function () {
     function valitse(v, $nappi) {
       $huone[0].style.setProperty(muuttuja, v.hex);
       $valittu.css('background', v.hex);
-      $valittu.siblings('.valittu-teksti').text(' ' + v.nimi);
+      $valittu.siblings('.valittu-teksti').text(v.nimi);
       $ala.find('button').removeClass('valittu').attr('aria-pressed', 'false');
       $nappi.addClass('valittu').attr('aria-pressed', 'true');
     }
