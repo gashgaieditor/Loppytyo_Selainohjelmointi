@@ -375,7 +375,7 @@ p, li, td, th, label, small, .small,
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-#seinän_nappialue, #Jalkalistan_nappialue {
+#seinan-nappialue, #jalkalistan-nappialue {
   display: flex;
   flex-wrap: wrap;
 }

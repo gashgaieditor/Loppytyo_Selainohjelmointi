@@ -1,5 +1,5 @@
 /* Värien testaus: realistisempi huonemalli (SVG) + värinapit
-   Vaatii: jQuery sekä HTML:ssä #huone, #seinän_nappialue, #Jalkalistan_nappialue,
+   Vaatii: jQuery sekä HTML:ssä #huone, #seinan-nappialue, #jalkalistan-nappialue,
    #seina-valittu, #jalkalista-valittu (+ niiden vieressä .valittu-teksti)
    HUOM. Tähän javascript koodiin on käytetty tekoälyn apua */
 
@@ -300,8 +300,8 @@ $(function () {
     });
   }
 
-  rakennaNapit('#seinän_nappialue', seinaVarit, '--seina', '#seina-valittu', 0);
-  rakennaNapit('#Jalkalistan_nappialue', jalkalistaVarit, '--jalkalista', '#jalkalista-valittu', 0);
+  rakennaNapit('#seinan-nappialue', seinaVarit, '--seina', '#seina-valittu', 0);
+  rakennaNapit('#jalkalistan-nappialue', jalkalistaVarit, '--jalkalista', '#jalkalista-valittu', 0);
 
   $('<style>' +
     '#huone{height:auto !important;min-height:0 !important;aspect-ratio:auto !important;' +
