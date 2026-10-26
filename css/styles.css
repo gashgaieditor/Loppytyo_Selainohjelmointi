@@ -182,7 +182,7 @@ p, li, td, th, label, small, .small,
 }
 
 /* Kuvakkeet eivät ole tekstiä, joten niiden koko saa poiketa */
-.kortti-palvelu .kuvake {
+.kortti-palvelu-kuvake {
   font-size: 2.5rem;
   color: var(--vp-akcentti);
 }
@@ -451,20 +451,13 @@ p, li, td, th, label, small, .small,
   text-align: center;
 }
 
-.kartta-upotus {
-  height: 260px;
+.kartta {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: 0;
   border-radius: 0.75rem;
-  background-color: #dfe6ea;
-  border: 2px dashed #aab7c0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--vp-harmaa);
-}
-
-.kartta-upotus .bi {
-  font-size: 2.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* ---------- Kutsu-toimintaan -palkki ---------- */
