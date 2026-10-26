@@ -402,6 +402,22 @@ p, li, td, th, label, small, .small,
   letter-spacing: 1px;
 }
 
+
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* kaikille kuville sama muoto */
+  object-fit: cover;      /* leikkaa kuvan sen sijaan että venyttäisi */
+  object-position: center top; /* pitää maalarin pään ja telan näkyvissä */
+  display: block;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;  /* kortit eivät venytä toisiaan saman korkuisiksi */
+}
+
 /* ---------- Yhteystiedot ---------- */
 /* Kuvakkeet eivät ole tekstiä, joten niiden koko saa poiketa */
 .yhteystieto-kohteet .bi {
