@@ -107,4 +107,39 @@ $(function () {
       $("html, body").animate({ scrollTop: $(kohde).offset().top - 80 }, 400);
     }
   });
+
+  // ---------- Galleria: kuvan avaus isompana (Bootstrap-modal) ----------
+  var $kuvaModal = $("#kuvaModal");
+
+  if ($kuvaModal.length) {
+    var kuvaModal = new bootstrap.Modal($kuvaModal[0]);
+    var $viimeisinKuva = null;
+
+    var avaaKuva = function ($kuva) {
+      $viimeisinKuva = $kuva;
+      $("#kuvaModalKuva").attr({ src: $kuva.attr("src"), alt: $kuva.attr("alt") });
+      $("#kuvaModalOtsikko").text($kuva.attr("alt"));
+      kuvaModal.show();
+    };
+
+    $(".galleria-lista .galleria-tuote img")
+      .each(function () {
+        $(this).attr({
+          tabindex: 0,
+          role: "button",
+          "aria-label": "Suurenna kuva: " + $(this).attr("alt")
+        });
+      })
+      .on("click keydown", function (e) {
+        // Näppäimistöllä Enter tai välilyönti toimii kuten klikkaus
+        if (e.type === "keydown" && e.key !== "Enter" && e.key !== " ") { return; }
+        e.preventDefault();
+        avaaKuva($(this));
+      });
+
+    // Sulkemisen jälkeen fokus palaa kuvaan, jota klikattiin
+    $kuvaModal.on("hidden.bs.modal", function () {
+      if ($viimeisinKuva) { $viimeisinKuva.trigger("focus"); }
+    });
+  }
 });

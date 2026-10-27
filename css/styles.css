@@ -259,6 +259,40 @@ p, li, td, th, label, small, .small,
   letter-spacing: 1px;
 }
 
+/* Galleria: klikattava kuva ja suurennusikkuna */
+.galleria-lista .galleria-tuote img {
+  cursor: zoom-in;
+}
+
+.galleria-lista .galleria-tuote img:focus-visible {
+  outline: 3px solid var(--vp-akcentti);
+  outline-offset: -3px;
+}
+
+/* Suurennusikkuna: harmaasta liukuvärillä valkoiseen */
+.kuva-modal {
+  background: linear-gradient(180deg, #c3ccd3 0%, #e4e9ec 50%, #ffffff 100%);
+}
+
+.kuva-modal .modal-header {
+  background: transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.kuva-modal .modal-body {
+  padding: 0.75rem;
+}
+
+.kuva-modal img {
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
 /* ---------- Yhteystiedot ---------- */
 /* Kuvakkeet eivät ole tekstiä, joten niiden koko saa poiketa */
 .yhteystieto-kohteet .bi {
