@@ -4,6 +4,9 @@
    HUOM. Tähän javascript koodiin on käytetty tekoälyn apua */
 
 $(function () {
+  /* Tämä skripti on vain värien testaus -sivulla: muilla sivuilla ei ole #huone-elementtiä */
+  if ($('#huone').length === 0) { return; }
+
   /* Kuvan värit: käytössä sekä seinissä että jalkalistoissa */
   var lisaVarit = [
     { nimi: 'Fiesta',          hex: '#DD4132' },
