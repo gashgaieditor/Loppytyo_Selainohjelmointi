@@ -1,7 +1,7 @@
 /* Värien testaus: realistisempi huonemalli (SVG) + värinapit
    Vaatii: jQuery sekä HTML:ssä #huone, #seinan-nappialue, #jalkalistan-nappialue,
    #seina-valittu, #jalkalista-valittu (+ niiden vieressä .valittu-teksti)
-   HUOM. Tähän javascript koodiin on käytetty tekoälyn apua */
+   HUOM. Tähän javascript koodi on luotu tekoälyn avulla 99% */
 
 $(function () {
   /* Tämä skripti on vain värien testaus -sivulla: muilla sivuilla ei ole #huone-elementtiä */

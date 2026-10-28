@@ -361,7 +361,7 @@ main {
   margin-right: 1.5rem;
 }
 
-/* Pienemmillä näytöillä hieman pienempi, ettei valikko täyty */
+/* Pienemmillä näytöillä hieman pienempi, ettei sivu hajoa */
 @media (max-width: 575.98px) {
   .logo-kuva {
     height: 40px;
